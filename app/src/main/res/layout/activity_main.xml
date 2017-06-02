@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.cysion.ankosample.activity.MainActivity">
+
+    <TextView
+        android:id="@+id/textToCommon"
+        style="@style/text_common"
+        android:text="common库的使用"/>
+
+    <TextView
+        android:id="@+id/textToLayout"
+        style="@style/text_common"
+        android:text="layout库的使用"
+        />
+
+    <TextView
+        android:id="@+id/textToCorountines"
+        style="@style/text_common"
+        android:text="Corountines库的使用"
+        />
+
+    <TextView
+        android:id="@+id/textToSQLite"
+        style="@style/text_common"
+        android:text="SQLite库的使用"
+        />
+
+</LinearLayout>

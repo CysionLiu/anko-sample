@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.cysion.ankosample.activity.CommonActivity">
+
+    <TextView
+        android:id="@+id/textToIntent1"
+        style="@style/text_common"
+        android:text="intent1"
+        />
+    <TextView
+        android:id="@+id/textToIntent2"
+        style="@style/text_common"
+        android:text="intent2"
+        />
+    <TextView
+        android:id="@+id/textToBrowser"
+        style="@style/text_common"
+        android:text="intentBrowser"
+        />
+    <TextView
+        android:id="@+id/textToLog"
+        style="@style/text_common"
+        android:text="Log"
+        />
+    <TextView
+        android:id="@+id/textToDimension"
+        style="@style/text_common"
+        android:text="Dimensions"
+        />
+    <TextView
+        android:id="@+id/textToHelpers"
+        style="@style/text_common"
+        android:text="Helpers"
+        />
+    <TextView
+        android:id="@+id/textToAlert"
+        style="@style/text_common"
+        android:text="alert1"
+        />
+    <TextView
+        android:id="@+id/textToAlert2"
+        style="@style/text_common"
+        android:text="alert2"
+        />
+    <TextView
+        android:id="@+id/textToSelector"
+        style="@style/text_common"
+        android:text="selector"
+        />
+</LinearLayout>
