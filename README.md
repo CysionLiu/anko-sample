@@ -2,7 +2,7 @@
 
 项目as配置：
 
-android版本：android studio 3.0 canary
+android studio 3.0 canary
 
 build:gradle:2.3.0
 
