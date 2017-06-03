@@ -8,7 +8,6 @@ import com.cysion.ankosample.utils.LogUtil.ae
 import com.cysion.ankosample.utils.LogUtil.ai
 import com.cysion.ankosample.utils.LogUtil.av
 import com.cysion.ankosample.utils.LogUtil.aw
-import com.cysion.ankosample.utils.doBgWork
 import kotlinx.android.synthetic.main.activity_common.*
 import org.jetbrains.anko.*
 
@@ -28,12 +27,13 @@ class CommonActivity : AppCompatActivity(), AnkoLogger {
         //
         textToBrowser.setOnClickListener {
             browse("http://m.baidu.com")
+            bundleOf("name" to "test")//just show bundle
         }
         //
         textToLog.setOnClickListener {
             verbose("tag-默认为调用类")//貌似不会打印
             debug(110)
-            warn(null)
+            warn(CData("data", 100))
             info(listOf<String>("today", "is", "a", "fine", "day"))
             error(HashMap<String, String>().apply {
                 put("小明", "12")
@@ -48,6 +48,7 @@ class CommonActivity : AppCompatActivity(), AnkoLogger {
                 put("小明", "12")
                 put("小红", "13")
             })
+            error("onCreate(CommonActivity.kt:50)\r\n -" + 110)
         }
         //
         textToDimension.setOnClickListener {
@@ -65,15 +66,13 @@ class CommonActivity : AppCompatActivity(), AnkoLogger {
             info(attempt { 1 / 0 }.error)//打印异常
             doFromSdk(21) {
                 info("从api 21开始打印")
+
             }
             doIfSdk(21) {
                 packageManager.getPackageInfo(packageName, 0).versionName
                 info("只有api 21才打印")
             }
-            doAsync {
-                var str = doBgWork()
-                uiThread { info(Thread.currentThread().name + " $str") }
-            }
+
         }
         //
         textToAlert.setOnClickListener {
@@ -84,12 +83,11 @@ class CommonActivity : AppCompatActivity(), AnkoLogger {
         }
         //
         textToAlert2.setOnClickListener {
-
             alert("this is the msg") {
                 customTitle {
                     verticalLayout {
                         imageView(R.mipmap.ic_launcher)
-                        editText { hint = "hint_title" }
+                        editText { hint = "title" }
                     }
                 }
                 okButton { toast("button-ok") }
@@ -105,3 +103,5 @@ class CommonActivity : AppCompatActivity(), AnkoLogger {
         }
     }
 }
+
+data class CData(var str: String, var str2: Int) {}

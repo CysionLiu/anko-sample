@@ -23,9 +23,4 @@
         style="@style/text_common"
         android:text="show3"
         />
-    <TextView
-        android:id="@+id/textToShow4"
-        style="@style/text_common"
-        android:text="show4"
-        />
 </LinearLayout>

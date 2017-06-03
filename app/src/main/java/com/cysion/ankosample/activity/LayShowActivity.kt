@@ -3,10 +3,12 @@ package com.cysion.ankosample.activity
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
+import com.cysion.ankosample.R
 import com.cysion.ankosample.utils.LayoutActyUI
 import com.cysion.ankosample.utils.LogUtil.ai
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk25.coroutines.onSeekBarChangeListener
+import org.jetbrains.anko.sdk25.coroutines.textChangedListener
 
 class LayShowActivity : AppCompatActivity() {
 
@@ -22,7 +24,7 @@ class LayShowActivity : AppCompatActivity() {
             4 -> showFirstStyle()
         }
     }
-
+    //layoutparams +  textChangedListener   +resource
     private fun showThirdStyle() {
         verticalLayout {
             button("seekbar") {
@@ -40,6 +42,14 @@ class LayShowActivity : AppCompatActivity() {
             }.lparams(width = dip(200)) {
                 horizontalMargin = dip(25)
                 topMargin = dip(20)
+            }
+            editText {
+                hintResource = R.string.app_name
+                textChangedListener {
+                    onTextChanged { str, start, before, count ->
+                        ai(str)
+                    }
+                }
             }
         }
     }
@@ -64,6 +74,7 @@ class LayShowActivity : AppCompatActivity() {
                 id = BTN_ID
             }
         }
+        //id findview
         find<Button>(BTN_ID).setOnClickListener { toast("this is login button") }
     }
 }

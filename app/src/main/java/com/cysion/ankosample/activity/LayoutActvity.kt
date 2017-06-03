@@ -2,8 +2,11 @@ package com.cysion.ankosample.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.widget.ScrollView
 import com.cysion.ankosample.R
 import kotlinx.android.synthetic.main.activity_layout_actvity.*
+import org.jetbrains.anko.act
+import org.jetbrains.anko.sdk25.coroutines.onScrollChange
 import org.jetbrains.anko.startActivity
 
 class LayoutActvity : AppCompatActivity() {
@@ -21,10 +24,6 @@ class LayoutActvity : AppCompatActivity() {
 
         textToShow3.setOnClickListener {
             startActivity<LayShowActivity>("id" to 3)
-        }
-
-        textToShow4.setOnClickListener {
-            startActivity<LayShowActivity>("id" to 4)
         }
     }
 }
