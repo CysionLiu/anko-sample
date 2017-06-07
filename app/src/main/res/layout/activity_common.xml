@@ -53,4 +53,12 @@
         style="@style/text_common"
         android:text="selector"
         />
+
+    <TextView
+        android:id="@+id/display"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorAccent"
+        style="@style/text_common"
+        android:text="display"
+        />
 </LinearLayout>

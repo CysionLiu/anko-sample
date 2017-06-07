@@ -55,6 +55,8 @@ class CommonActivity : AppCompatActivity(), AnkoLogger {
             //context,ankocontext,fragment,view都可以用
             info(dip(100))//dp->px
             info(px2dip(100))//px->dp
+            display.text = "dip(100) is 100dp to " + dip(100) + "px\n" +
+                    "px2dip(100) is 100px to " + px2dip(100) + "dp"
         }
         //
         textToHelpers.setOnClickListener {
@@ -66,11 +68,13 @@ class CommonActivity : AppCompatActivity(), AnkoLogger {
             info(attempt { 1 / 0 }.error)//打印异常
             doFromSdk(21) {
                 info("从api 21开始打印")
+                display.text ="从api 21开始打印"
 
             }
             doIfSdk(21) {
                 packageManager.getPackageInfo(packageName, 0).versionName
                 info("只有api 21才打印")
+                display.text =  display.text.toString() +"\n只有api 21才打印"
             }
 
         }
