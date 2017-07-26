@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AnkoSample</string>
+    <string name="str_use_common">common part sample</string>
+    <string name="str_use_layout">layout part sample</string>
+    <string name="str_use_corountine">Corountines part sample</string>
+    <string name="str_use_sqlite">SQLite part sample</string>
+</resources>

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AnkoSample</string>
+    <string name="str_use_common">common库的使用</string>
+    <string name="str_use_layout">layout库的使用</string>
+    <string name="str_use_corountine">Corountines库的使用</string>
+    <string name="str_use_sqlite">SQLite库的使用</string>
 </resources>
