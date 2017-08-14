@@ -9,7 +9,7 @@
     </style>
 
     <style name="text_common">
-        <item name="android:layout_width">240dp</item>
+        <item name="android:layout_width">150dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">20dp</item>
         <item name="android:background">@color/light_green</item>

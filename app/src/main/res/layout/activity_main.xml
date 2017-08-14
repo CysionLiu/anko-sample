@@ -11,24 +11,24 @@
     <TextView
         android:id="@+id/textToCommon"
         style="@style/text_common"
-        android:text="@string/str_use_common"/>
+        android:text="common库的使用"/>
 
     <TextView
         android:id="@+id/textToLayout"
         style="@style/text_common"
-        android:text="@string/str_use_layout"
+        android:text="layout库的使用"
         />
 
     <TextView
         android:id="@+id/textToCorountines"
         style="@style/text_common"
-        android:text="@string/str_use_corountine"
+        android:text="Corountines库的使用"
         />
 
     <TextView
         android:id="@+id/textToSQLite"
         style="@style/text_common"
-        android:text="@string/str_use_sqlite"
+        android:text="SQLite库的使用"
         />
 
 </LinearLayout>

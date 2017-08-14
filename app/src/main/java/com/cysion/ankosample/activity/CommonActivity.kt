@@ -8,6 +8,7 @@ import com.cysion.ankosample.utils.LogUtil.ae
 import com.cysion.ankosample.utils.LogUtil.ai
 import com.cysion.ankosample.utils.LogUtil.av
 import com.cysion.ankosample.utils.LogUtil.aw
+import com.cysion.ankosample.utils.doBgWork
 import kotlinx.android.synthetic.main.activity_common.*
 import org.jetbrains.anko.*
 
@@ -18,45 +19,41 @@ class CommonActivity : AppCompatActivity(), AnkoLogger {
         setContentView(R.layout.activity_common)
         //
         textToIntent1.setOnClickListener {
-            startActivity<IntentActivity>("name" to "小明", "age" to 12)
+            startActivity<IntentActivity>("name" to "Jack", "age" to 12)
         }
         //
         textToIntent2.setOnClickListener {
-            startActivity(intentFor<IntentActivity>("name" to "小红", "age" to 13).singleTop())
+            startActivity(intentFor<IntentActivity>("name" to "Lily", "age" to 13).singleTop())
         }
         //
         textToBrowser.setOnClickListener {
             browse("http://m.baidu.com")
-            bundleOf("name" to "test")//just show bundle
         }
         //
         textToLog.setOnClickListener {
-            verbose("tag-默认为调用类")//貌似不会打印
+            verbose("tag-default class")//unable to print
             debug(110)
-            warn(CData("data", 100))
+            warn(null)
             info(listOf<String>("today", "is", "a", "fine", "day"))
             error(HashMap<String, String>().apply {
-                put("小明", "12")
-                put("小红", "13")
+                put("Jack", "12")
+                put("Lily", "13")
             })
-            //另一种用法
-            av("tag-默认为调用类")
+            //other
+            av("tag-default class")
             ad("debug")
             aw(null)
             ai(listOf<String>("today", "is", "a", "fine", "day"))
             ae(HashMap<String, String>().apply {
-                put("小明", "12")
-                put("小红", "13")
+                put("Jack", "12")
+                put("Lily", "13")
             })
-            error("onCreate(CommonActivity.kt:50)\r\n -" + 110)
         }
         //
         textToDimension.setOnClickListener {
-            //context,ankocontext,fragment,view都可以用
+            //context,ankocontext,fragment,view can be used all
             info(dip(100))//dp->px
             info(px2dip(100))//px->dp
-            display.text = "dip(100) is 100dp to " + dip(100) + "px\n" +
-                    "px2dip(100) is 100px to " + px2dip(100) + "dp"
         }
         //
         textToHelpers.setOnClickListener {
@@ -64,19 +61,19 @@ class CommonActivity : AppCompatActivity(), AnkoLogger {
                 append("displayMetrics.widthPixels:$displayMetrics\n")
             }.toString()
             info(builder)
-            info(attempt { 3 }.value)//替代try..catch?
-            info(attempt { 1 / 0 }.error)//打印异常
+            info(attempt { 3 }.value)//substitute for try..catch?
+            info(attempt { 1 / 0 }.error)//
             doFromSdk(21) {
-                info("从api 21开始打印")
-                display.text ="从api 21开始打印"
-
+                info("print from api 21")
             }
             doIfSdk(21) {
                 packageManager.getPackageInfo(packageName, 0).versionName
-                info("只有api 21才打印")
-                display.text =  display.text.toString() +"\n只有api 21才打印"
+                info("print only api is 21")
             }
-
+            doAsync {
+                var str = doBgWork()
+                uiThread { info(Thread.currentThread().name + " $str") }
+            }
         }
         //
         textToAlert.setOnClickListener {
@@ -87,11 +84,12 @@ class CommonActivity : AppCompatActivity(), AnkoLogger {
         }
         //
         textToAlert2.setOnClickListener {
+
             alert("this is the msg") {
                 customTitle {
                     verticalLayout {
                         imageView(R.mipmap.ic_launcher)
-                        editText { hint = "title" }
+                        editText { hint = "hint_title" }
                     }
                 }
                 okButton { toast("button-ok") }
@@ -107,5 +105,3 @@ class CommonActivity : AppCompatActivity(), AnkoLogger {
         }
     }
 }
-
-data class CData(var str: String, var str2: Int) {}

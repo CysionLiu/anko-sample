@@ -9,18 +9,8 @@
     tools:context="com.cysion.ankosample.activity.CommonActivity">
 
     <TextView
-        android:id="@+id/textToShow1"
+        android:id="@+id/textToLayout"
         style="@style/text_common"
-        android:text="show1"
-        />
-    <TextView
-        android:id="@+id/textToShow2"
-        style="@style/text_common"
-        android:text="show2"
-        />
-    <TextView
-        android:id="@+id/textToShow3"
-        style="@style/text_common"
-        android:text="show3"
+        android:text="dialog"
         />
 </LinearLayout>
