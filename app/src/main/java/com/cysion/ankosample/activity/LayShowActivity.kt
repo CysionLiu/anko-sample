@@ -7,8 +7,8 @@ import com.cysion.ankosample.R
 import com.cysion.ankosample.utils.LayoutActyUI
 import com.cysion.ankosample.utils.LogUtil.ai
 import org.jetbrains.anko.*
-import org.jetbrains.anko.sdk25.coroutines.onSeekBarChangeListener
-import org.jetbrains.anko.sdk25.coroutines.textChangedListener
+import org.jetbrains.anko.sdk27.coroutines.onSeekBarChangeListener
+import org.jetbrains.anko.sdk27.coroutines.textChangedListener
 
 class LayShowActivity : AppCompatActivity() {
 

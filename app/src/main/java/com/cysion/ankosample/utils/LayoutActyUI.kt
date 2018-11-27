@@ -2,7 +2,7 @@ package com.cysion.ankosample.utils
 
 import com.cysion.ankosample.activity.LayShowActivity
 import org.jetbrains.anko.*
-import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.sdk27.coroutines.onClick
 
 /**
  * Created by cysionLiu on 2017/6/2.
